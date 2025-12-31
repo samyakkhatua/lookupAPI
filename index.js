@@ -23,6 +23,11 @@ const sheets = google.sheets({ version: 'v4', auth });
 
 const SHEET_ID = process.env.GOOGLE_SHEET_ID;
 
+// a api route for / that returns a message 
+app.get('/', (req, res) => {
+    res.send('Welcome to Google Sheets API');
+});
+
 // API Route to Get Records by Email
 app.post('/get-records', async (req, res) => {
     const email = req.body.email;
